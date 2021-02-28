@@ -10,7 +10,7 @@ namespace _3ak3ekCoin
         public IList<Transaction> PendingTransactions = new List<Transaction>();
         private readonly int _difficulty = 3;
         private readonly int _blockRewards = 50;
-        private readonly int _blockSize = 10;
+        private readonly int _blockSize = 2;
 
         public Block GetLastBlock()
         {
@@ -40,7 +40,7 @@ namespace _3ak3ekCoin
                 var end = i + _blockSize;
                 if (i >= len) end = len;
 
-                var transactionSlice = PendingTransactions.Skip(i).Take(end).ToList();
+                var transactionSlice = PendingTransactions.Skip(i).Take(_blockSize).ToList();
                 var newBlock = new Block(transactionSlice, DateTime.Now, Chain.Count);
                 var hashVal = GetLastBlock().hash;
                 newBlock.prev = hashVal;

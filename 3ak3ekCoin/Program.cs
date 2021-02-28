@@ -11,6 +11,10 @@ namespace _3ak3ekCoin
             var blockChain = new BlockChain();
 
             blockChain.PendingTransactions.Add(new Transaction("ghazi", "kamel", 20));
+            blockChain.PendingTransactions.Add(new Transaction("ghazi", "kamel", 10));
+            blockChain.PendingTransactions.Add(new Transaction("ghazi", "kamel", 5));
+            blockChain.PendingTransactions.Add(new Transaction("ghazi", "kamel", 2));
+            blockChain.PendingTransactions.Add(new Transaction("ghazi", "kamel", 100));
 
             blockChain.MinePendingTransaction();
 
